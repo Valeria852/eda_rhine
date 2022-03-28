@@ -1,6 +1,6 @@
 library(data.table)
 library(ggplot2)
-runoff_stations_dt <- fread('./data/raw/raw/runoff_stations.csv')
+runoff_stations_dt <- fread('./data/runoff_stations.rds')
 runoff_stations_dt
 runoff_stations_dt[, sname := factor(abbreviate(station))]
 #add gradient
@@ -17,4 +17,6 @@ ggplot(data = runoff_stations_dt, aes(x = lon, y = lat, col = altitude)) +
   geom_text(label = runoff_stations_dt$sname) +
   scale_color_gradient(low = 'dark green', high = 'brown') +
   theme_bw()
+
+
 
