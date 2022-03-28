@@ -19,3 +19,5 @@ runoff_stations[, altitude := round(altitude, 0)]
 head(runoff_stations)
 
 saveRDS(runoff_stations, './data/runoff_stations_raw.rds')
+
+getwd()
